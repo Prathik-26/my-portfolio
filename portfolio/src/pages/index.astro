@@ -1,16 +1,71 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/solid/Navigation";
+import ThemeToggle from "../components/solid/ThemeToggle";
+import ProjectFilter from "../components/solid/ProjectFilter";
+import ContactSection from "../components/solid/ContactSection";
+import ProjectCarousel from "../components/solid/ProjectFilter";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Prathik Shetty">
+  <!-- Navigation with smooth scroll -->
+  <Navigation client:load />
+
+  <!-- Theme Toggle -->
+  <!-- <ThemeToggle client:load /> -->
+
+  <main class="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20">
+      <div class="space-y-4">
+        <p class="text-accent font-mono text-sm md:text-base">
+          Hey there!, I'm
+        </p>
+        <h1 class="text-textLight text-5xl md:text-7xl font-bold">
+          Prathik Shetty.
+        </h1>
+        <h2 class="text-text text-4xl md:text-6xl font-bold">
+          I build things for the web.
+        </h2>
+        <p class="text-text max-w-lg text-lg">
+          Software developer specializing in React and frontend development.
+          Previously worked in Japan building scalable web applications.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="min-h-screen py-24">
+      <h2 class="text-textLight text-3xl font-bold mb-8">
+        <span class="text-accent font-mono">01.</span> About Me
+      </h2>
+      <!-- Your about content -->
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="min-h-screen py-24">
+      <h2 class="text-textLight text-3xl font-bold mb-8">
+        <span class="text-accent font-mono">02.</span> Experience
+      </h2>
+      <!-- Your experience content -->
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="min-h-screen py-24">
+      <div class="mb-16">
+        <h2 class="text-textLight text-5xl md:text-6xl font-bold mb-6">
+          Projects
+        </h2>
+        <p class="text-text text-lg md:text-xl max-w-2xl">
+          A collection of projects I've worked on. Swipe or use arrows to
+          explore.
+        </p>
+      </div>
+
+      <ProjectCarousel client:load />
+    </section>
+
+    <!-- Contact Section -->
+    <ContactSection client:load />
+  </main>
+</Layout>

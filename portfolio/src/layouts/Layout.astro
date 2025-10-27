@@ -1,0 +1,77 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Software Developer | React & Frontend Specialist" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <title>{title}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body class="bg-primary text-text font-sans antialiased">
+  <slot />
+</body>
+</html>
+
+<style is:global>
+  /* CSS Variables for theming */
+  .dark-theme {
+    --bg-primary: #0a192f;
+    --bg-secondary: #112240;
+    --text-primary: #ccd6f6;
+    --text-secondary: #8892b0;
+    --accent: #64ffda;
+  }
+  
+  .light-theme {
+    --bg-primary: #f8fafb;
+    --bg-secondary: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --accent: #38b2ac;
+  }
+
+  /* Apply to root */
+  :root {
+    --bg-primary: #0a192f;
+    --bg-secondary: #112240;
+    --text-primary: #ccd6f6;
+    --text-secondary: #8892b0;
+    --accent: #64ffda;
+  }
+
+  /* Base styles */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .light-theme .bg-primary {
+    background-color: var(--bg-primary) !important;
+  }
+
+  .light-theme .bg-secondary {
+    background-color: var(--bg-secondary) !important;
+  }
+
+  .light-theme .text-text {
+    color: var(--text-secondary) !important;
+  }
+
+  .light-theme .text-textLight {
+    color: var(--text-primary) !important;
+  }
+</style>
