@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/solid-js": "^5.1.1",
+    "astro": "^5.15.1",
+    "solid-js": "^1.9.9"
+  },
+  "devDependencies": {
+    "@unocss/preset-typography": "^66.5.4",
+    "@unocss/preset-wind": "^66.5.4",
+    "@unocss/reset": "^66.5.4",
+    "unocss": "^66.5.4"
+  }
+}
