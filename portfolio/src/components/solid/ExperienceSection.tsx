@@ -18,7 +18,7 @@ interface Experience {
 }
 
 export default function ExperienceSection() {
-  const [activeTab, setActiveTab] = createSignal("kakunje");
+  const [activeTab, setActiveTab] = createSignal("freelance");
 
   const experiences: Experience[] = [
     {
