@@ -20,7 +20,11 @@ export default function AboutSection() {
       label: "Lifestyle",
       value: "Fitness & bodybuilding",
     },
-    { icon: "i-mdi-laptop", label: "Focus", value: "FullStack (React + Nest.js)" },
+    {
+      icon: "i-mdi-laptop",
+      label: "Focus",
+      value: "FullStack (React + Nest.js)",
+    },
   ];
 
   const stats: Stat[] = [
@@ -42,7 +46,7 @@ export default function AboutSection() {
     {
       icon: "i-mdi-file-account",
       label: "Resume",
-      href: "/resume.pdf",
+      href: "/Prathik_Shetty_Resume.pdf",
       external: true,
     },
     {
@@ -54,7 +58,7 @@ export default function AboutSection() {
     {
       icon: "i-simple-icons-linkedin",
       label: "LinkedIn",
-      href: "https://linkedin.com/in/your-profile",
+      href: "https://www.linkedin.com/in/prathik-shetty-657634191/",
       external: true,
     },
   ];
@@ -122,8 +126,12 @@ export default function AboutSection() {
         {/* Right: Info Card */}
         <div class="rounded-2xl border-2 border-accent border-opacity-20 bg-secondary bg-opacity-60 p-6 md:p-8 space-y-6 animate-fade-in">
           {/* Avatar Placeholder */}
-          <div class="rounded-xl bg-gradient-to-br from-accent/15 to-accent/5 h-40 mb-6 flex items-center justify-center">
-            <div class="i-mdi-code-braces text-accent text-5xl opacity-60"></div>
+          <div class="rounded-xl overflow-hidden h-40 mb-6 bg-gradient-to-br from-accent/15 to-accent/5">
+            <img
+              src="/about-img.jpg"
+              alt="Slam Dunk"
+              class="w-full h-full object-cover"
+            />
           </div>
 
           {/* Availability Status */}
@@ -141,18 +149,18 @@ export default function AboutSection() {
           </div>
 
           {/* Stats */}
-          <div class="grid grid-cols-3 gap-3">
-            <For each={stats}>
-              {(stat) => (
-                <div class="rounded-xl bg-primary bg-opacity-40 border border-accent border-opacity-15 p-4 text-center hover:border-opacity-30 transition-colors">
-                  <p class="text-textLight text-2xl font-bold">{stat.value}</p>
-                  <p class="text-text font-mono text-xs opacity-70">
-                    {stat.label}
-                  </p>
-                </div>
-              )}
-            </For>
-          </div>
+          <div class="grid grid-cols-3 gap-2 sm:gap-3">
+  <For each={stats}>
+    {(stat) => (
+      <div class="rounded-xl bg-primary bg-opacity-40 border border-accent border-opacity-15 p-2 sm:p-4 text-center hover:border-opacity-30 transition-colors">
+        <p class="text-textLight text-lg sm:text-2xl font-bold whitespace-nowrap">{stat.value}</p>
+        <p class="text-text font-mono text-[10px] sm:text-xs opacity-70">
+          {stat.label}
+        </p>
+      </div>
+    )}
+  </For>
+</div>
 
           {/* Core Stack Icons */}
           <div>

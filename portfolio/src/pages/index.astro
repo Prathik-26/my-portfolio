@@ -2,11 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/solid/Navigation";
 import ThemeToggle from "../components/solid/ThemeToggle";
-import ProjectFilter from "../components/solid/ProjectFilter";
 import ContactSection from "../components/solid/ContactSection";
-import ProjectCarousel from "../components/solid/ProjectFilter";
+import ProjectCarousel from "../components/solid/ProjectCarousel";
 import ExperienceSection from "../components/solid/ExperienceSection";
 import AboutSection from "../components/solid/AboutSection";
+import HeroSection from "../components/solid/HeroSection";
 ---
 
 <Layout title="Prathik Shetty">
@@ -18,23 +18,7 @@ import AboutSection from "../components/solid/AboutSection";
 
   <main class="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24">
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-20">
-      <div class="space-y-4">
-        <p class="text-accent font-mono text-sm md:text-base">
-          Hey there!, I'm
-        </p>
-        <h1 class="text-textLight text-5xl md:text-7xl font-bold">
-          Prathik Shetty.
-        </h1>
-        <h2 class="text-text text-4xl md:text-6xl font-bold">
-          I build things for the web.
-        </h2>
-        <p class="text-text max-w-lg text-lg">
-          Software developer specializing in React and frontend development.
-          Previously worked in Japan building scalable web applications.
-        </p>
-      </div>
-    </section>
+    <HeroSection client:load />
 
     <!-- About Section -->
     <AboutSection client:load />
