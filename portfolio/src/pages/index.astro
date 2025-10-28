@@ -6,6 +6,7 @@ import ProjectFilter from "../components/solid/ProjectFilter";
 import ContactSection from "../components/solid/ContactSection";
 import ProjectCarousel from "../components/solid/ProjectFilter";
 import ExperienceSection from "../components/solid/ExperienceSection";
+import AboutSection from "../components/solid/AboutSection";
 ---
 
 <Layout title="Prathik Shetty">
@@ -36,12 +37,7 @@ import ExperienceSection from "../components/solid/ExperienceSection";
     </section>
 
     <!-- About Section -->
-    <section id="about" class="min-h-screen py-24">
-      <h2 class="text-textLight text-3xl font-bold mb-8">
-        <span class="text-accent font-mono">01.</span> About Me
-      </h2>
-      <!-- Your about content -->
-    </section>
+    <AboutSection client:load />
 
     <!-- Experience Section -->
     <ExperienceSection client:load />
