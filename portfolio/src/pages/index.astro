@@ -5,6 +5,7 @@ import ThemeToggle from "../components/solid/ThemeToggle";
 import ProjectFilter from "../components/solid/ProjectFilter";
 import ContactSection from "../components/solid/ContactSection";
 import ProjectCarousel from "../components/solid/ProjectFilter";
+import ExperienceSection from "../components/solid/ExperienceSection";
 ---
 
 <Layout title="Prathik Shetty">
@@ -43,12 +44,7 @@ import ProjectCarousel from "../components/solid/ProjectFilter";
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="min-h-screen py-24">
-      <h2 class="text-textLight text-3xl font-bold mb-8">
-        <span class="text-accent font-mono">02.</span> Experience
-      </h2>
-      <!-- Your experience content -->
-    </section>
+    <ExperienceSection client:load />
 
     <!-- Projects Section -->
     <section id="projects" class="min-h-screen py-24">

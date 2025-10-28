@@ -57,7 +57,7 @@ export default function ProjectCarousel() {
       category: "web",
       // featured: true,
       github: "https://github.com/yourusername/reddit-client",
-      live: "https://reddit-client-demo.com",
+      // live: "https://reddit-client-demo.com",
     },
     {
       id: 4,
@@ -66,10 +66,10 @@ export default function ProjectCarousel() {
         "Real-time weather application with beautiful UI and detailed forecasts. Built to practice API integration and state management with modern React patterns.",
       tech: ["React", "JavaScript", "OpenWeather API", "CSS"],
       category: "web",
-      image: "/assets/projects/weather-app.jpg",
+      // image: "/assets/projects/weather-app.jpg",
       // featured: true,
       github: "https://github.com/yourusername/weather-app",
-      live: "https://weather-app-demo.com",
+      live: "https://weather-app-bay-theta-59.vercel.app/",
     },
     {
       id: 5,
@@ -212,8 +212,8 @@ export default function ProjectCarousel() {
 
       {/* Carousel */}
       <div class="relative">
-        <div class="overflow-hidden" ref={emblaRef}>
-          <div class="flex gap-6">
+        <div class="overflow-hidden overflow-y-visible" ref={emblaRef}>
+          <div class="flex gap-6 py-2">
             <For each={filteredProjects()}>
               {(project) => (
                 <div class="flex-[0_0_100%] md:flex-[0_0_calc(50%-0.75rem)] min-w-0">
