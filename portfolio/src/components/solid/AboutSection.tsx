@@ -18,7 +18,7 @@ export default function AboutSection() {
     {
       icon: "i-mdi-weight-lifter",
       label: "Lifestyle",
-      value: "Fitness & bodybuilding",
+      value: "Fitness & Coding",
     },
     {
       icon: "i-mdi-laptop",
