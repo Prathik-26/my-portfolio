@@ -56,8 +56,8 @@ export default function ProjectCarousel() {
       tech: ["React", "TypeScript", "Reddit API", "Chakra UI"],
       category: "web",
       // featured: true,
-      github: "https://github.com/yourusername/reddit-client",
-      // live: "https://reddit-client-demo.com",
+      github: "https://github.com/Prathik-26/reddit-client",
+      live: "https://reddit-client-blue.vercel.app/",
     },
     {
       id: 4,
