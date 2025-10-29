@@ -14,7 +14,7 @@ export default function ContactSection() {
     {
       name: "Email",
       icon: "i-mdi-email",
-      url: "mailto:your.prathikshetty006@gmail.com",
+      url: "prathikshetty006@gmail.com", // just the email address, we'll construct the mailto: in the template
     },
     {
       name: "LinkedIn",
@@ -50,9 +50,13 @@ export default function ContactSection() {
         <div class="flex gap-4 flex-wrap">
           {socialLinks.map((social) => (
             <a
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={
+                social.name === "Email"
+                  ? `mailto:prathikshetty006@gmail.com?subject=Hello%20Prathik!&body=Hi%2C%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect...`
+                  : social.url
+              }
+              target={social.name === "Email" ? "_self" : "_blank"}
+              rel={social.name === "Email" ? undefined : "noopener noreferrer"}
               class="bg-secondary p-4 rounded-full hover:bg-accent hover:bg-opacity-20 transition-all duration-300 transform hover:scale-110 group"
               aria-label={social.name}
             >
