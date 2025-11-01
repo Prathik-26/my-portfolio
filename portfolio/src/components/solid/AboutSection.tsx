@@ -128,7 +128,7 @@ export default function AboutSection() {
           {/* Avatar Placeholder */}
           <div class="rounded-xl overflow-hidden h-40 mb-6 bg-gradient-to-br from-accent/15 to-accent/5">
             <img
-              src="/about-img.jpg"
+              src="/prathik.jpg"
               alt="Slam Dunk"
               class="w-full h-full object-cover"
             />
