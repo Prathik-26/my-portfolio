@@ -14,7 +14,7 @@ export default function ContactSection() {
     {
       name: "Email",
       icon: "i-mdi-email",
-      url: "prathikshetty006@gmail.com", // just the email address, we'll construct the mailto: in the template
+      url: "prathikshetty006@gmail.com",
     },
     {
       name: "LinkedIn",

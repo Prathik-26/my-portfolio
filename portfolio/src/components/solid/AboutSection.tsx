@@ -129,7 +129,7 @@ export default function AboutSection() {
           <div class="rounded-xl overflow-hidden h-40 mb-6 bg-gradient-to-br from-accent/15 to-accent/5">
             <img
               src="/prathik.jpg"
-              alt="Slam Dunk"
+              alt="my picture"
               class="w-full h-full object-cover"
             />
           </div>
@@ -150,17 +150,19 @@ export default function AboutSection() {
 
           {/* Stats */}
           <div class="grid grid-cols-3 gap-2 sm:gap-3">
-  <For each={stats}>
-    {(stat) => (
-      <div class="rounded-xl bg-primary bg-opacity-40 border border-accent border-opacity-15 p-2 sm:p-4 text-center hover:border-opacity-30 transition-colors">
-        <p class="text-textLight text-lg sm:text-2xl font-bold whitespace-nowrap">{stat.value}</p>
-        <p class="text-text font-mono text-[10px] sm:text-xs opacity-70">
-          {stat.label}
-        </p>
-      </div>
-    )}
-  </For>
-</div>
+            <For each={stats}>
+              {(stat) => (
+                <div class="rounded-xl bg-primary bg-opacity-40 border border-accent border-opacity-15 p-2 sm:p-4 text-center hover:border-opacity-30 transition-colors">
+                  <p class="text-textLight text-lg sm:text-2xl font-bold whitespace-nowrap">
+                    {stat.value}
+                  </p>
+                  <p class="text-text font-mono text-[10px] sm:text-xs opacity-70">
+                    {stat.label}
+                  </p>
+                </div>
+              )}
+            </For>
+          </div>
 
           {/* Core Stack Icons */}
           <div>

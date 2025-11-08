@@ -118,8 +118,9 @@ export default function Navigation() {
             <li>
               <a
                 href="/Prathik_Shetty_Resume.pdf"
-                download="Prathik_Shetty_Resume.pdf"
+                // download="Prathik_Shetty_Resume.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="border-2 border-accent text-accent px-4 py-2 rounded font-mono text-sm hover:bg-accent hover:bg-opacity-10 transition-colors"
               >
                 Resume
