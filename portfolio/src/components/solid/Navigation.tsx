@@ -10,6 +10,7 @@ export default function Navigation() {
   const [activeSection, setActiveSection] = createSignal("");
   const [isScrolled, setIsScrolled] = createSignal(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = createSignal(false);
+  const [theme, setTheme] = createSignal<"dark" | "light">("dark");
 
   const navItems: NavItem[] = [
     { id: "about", label: "About", number: "01" },
@@ -32,8 +33,22 @@ export default function Navigation() {
     }
   };
 
+  // Theme toggle
+  const toggleTheme = () => {
+    const newTheme = theme() === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    const root = document.documentElement;
+    root.classList.remove("dark-theme", "light-theme");
+    root.classList.add(newTheme === "light" ? "light-theme" : "dark-theme");
+    localStorage.setItem("theme", newTheme);
+  };
+
   // Track active section and scroll position
   onMount(() => {
+    // Read initial theme from the class set by the inline script
+    const isLight = document.documentElement.classList.contains("light-theme");
+    setTheme(isLight ? "light" : "dark");
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
@@ -115,6 +130,16 @@ export default function Navigation() {
                 </li>
               )}
             </For>
+            {/* Theme Toggle */}
+            <li>
+              <button
+                onClick={toggleTheme}
+                class="p-2 rounded-lg text-accent hover:bg-accent hover:bg-opacity-10 transition-all duration-300"
+                aria-label={theme() === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                <div class={`${theme() === "dark" ? "i-mdi-weather-sunny" : "i-mdi-weather-night"} text-lg`} />
+              </button>
+            </li>
             <li>
               <a
                 href="/Prathik_Shetty_Resume.pdf"
@@ -129,14 +154,39 @@ export default function Navigation() {
           </ul>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMobileMenu}
-            class="md:hidden text-accent z-50 relative w-8 h-8 flex items-center justify-center"
-            aria-label={isMobileMenuOpen() ? "Close menu" : "Open menu"}
-          >
-            <Show
-              when={!isMobileMenuOpen()}
-              fallback={
+          <div class="flex items-center gap-3 md:hidden">
+            {/* Mobile Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              class="p-2 rounded-lg text-accent hover:bg-accent hover:bg-opacity-10 transition-all duration-300"
+              aria-label={theme() === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              <div class={`${theme() === "dark" ? "i-mdi-weather-sunny" : "i-mdi-weather-night"} text-lg`} />
+            </button>
+
+            <button
+              onClick={toggleMobileMenu}
+              class="text-accent z-50 relative w-8 h-8 flex items-center justify-center"
+              aria-label={isMobileMenuOpen() ? "Close menu" : "Open menu"}
+            >
+              <Show
+                when={!isMobileMenuOpen()}
+                fallback={
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                }
+              >
                 <svg
                   class="w-6 h-6"
                   fill="none"
@@ -147,26 +197,12 @@ export default function Navigation() {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"
+                    d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
-              }
-            >
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </Show>
-          </button>
+              </Show>
+            </button>
+          </div>
         </div>
       </nav>
 

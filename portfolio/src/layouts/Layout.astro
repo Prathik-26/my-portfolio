@@ -15,6 +15,22 @@ const { title, description = "Software Developer | React & Frontend Specialist" 
   <meta name="description" content={description}>
   <title>{title}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Prevent flash of wrong theme -->
+  <script is:inline>
+    (function() {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.documentElement.classList.add('light-theme');
+      } else if (theme === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+      } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.classList.add('light-theme');
+      } else {
+        document.documentElement.classList.add('dark-theme');
+      }
+    })();
+  </script>
 </head>
 <body class="bg-primary text-text font-sans antialiased">
   <slot />
@@ -22,30 +38,22 @@ const { title, description = "Software Developer | React & Frontend Specialist" 
 </html>
 
 <style is:global>
-  /* CSS Variables for theming */
-  .dark-theme {
-    --bg-primary: #0a192f;
-    --bg-secondary: #112240;
-    --text-primary: #ccd6f6;
-    --text-secondary: #8892b0;
-    --accent: #64ffda;
-  }
-  
-  .light-theme {
-    --bg-primary: #f8fafb;
-    --bg-secondary: #ffffff;
-    --text-primary: #2d3748;
-    --text-secondary: #4a5568;
-    --accent: #38b2ac;
+  /* ── Dark theme (default) ── */
+  :root, .dark-theme {
+    --c-primary: 10, 25, 47;
+    --c-secondary: 17, 34, 64;
+    --c-accent: 100, 255, 218;
+    --c-text: 136, 146, 176;
+    --c-textLight: 204, 214, 246;
   }
 
-  /* Apply to root */
-  :root {
-    --bg-primary: #0a192f;
-    --bg-secondary: #112240;
-    --text-primary: #ccd6f6;
-    --text-secondary: #8892b0;
-    --accent: #64ffda;
+  /* ── Light theme ── */
+  .light-theme {
+    --c-primary: 240, 244, 248;
+    --c-secondary: 255, 255, 255;
+    --c-accent: 13, 148, 136;
+    --c-text: 100, 116, 139;
+    --c-textLight: 30, 41, 59;
   }
 
   /* Base styles */
@@ -54,25 +62,12 @@ const { title, description = "Software Developer | React & Frontend Specialist" 
   }
 
   body {
-    background-color: var(--bg-primary);
-    color: var(--text-secondary);
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .light-theme .bg-primary {
-    background-color: var(--bg-primary) !important;
-  }
-
+  /* Light-theme specific adjustments */
   .light-theme .bg-secondary {
-    background-color: var(--bg-secondary) !important;
-  }
-
-  .light-theme .text-text {
-    color: var(--text-secondary) !important;
-  }
-
-  .light-theme .text-textLight {
-    color: var(--text-primary) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   }
 
   @keyframes fadeIn {

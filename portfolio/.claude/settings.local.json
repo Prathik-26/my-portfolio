@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /c/Users/91831/Desktop/exy/my-portfolio/portfolio/src/components/solid/*.tsx /c/Users/91831/Desktop/exy/my-portfolio/portfolio/src/layouts/*.astro /c/Users/91831/Desktop/exy/my-portfolio/portfolio/src/pages/*.astro)",
+      "Bash(ls -lh /c/Users/91831/Desktop/exy/my-portfolio/portfolio/public/*.jpg /c/Users/91831/Desktop/exy/my-portfolio/portfolio/public/*.pdf)",
+      "Bash(grep -r \"aria-label\\\\|aria-\" /c/Users/91831/Desktop/exy/my-portfolio/portfolio/src --include=*.tsx --include=*.astro)",
+      "Bash(grep -r \"semantic\\\\|<article\\\\|<aside\\\\|<nav\\\\|<header\\\\|<footer\\\\|<main\\\\|<section\" /c/Users/91831/Desktop/exy/my-portfolio/portfolio/src --include=*.tsx --include=*.astro)"
+    ]
+  }
+}

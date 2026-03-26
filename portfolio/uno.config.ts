@@ -17,14 +17,38 @@ export default defineConfig({
       },
     }),
   ],
+  rules: [
+    // Theme-aware background colors (use CSS variables so dark/light theme swap works)
+    ["bg-primary", { "background-color": "rgba(var(--c-primary), var(--un-bg-opacity, 1))" }],
+    ["bg-secondary", { "background-color": "rgba(var(--c-secondary), var(--un-bg-opacity, 1))" }],
+    ["bg-accent", { "background-color": "rgba(var(--c-accent), var(--un-bg-opacity, 1))" }],
+    [/^bg-accent\/(\d+)$/, ([, o]) => ({ "background-color": `rgba(var(--c-accent), ${parseInt(o!) / 100})` })],
+
+    // Theme-aware text colors
+    ["text-text", { "color": "rgba(var(--c-text), var(--un-text-opacity, 1))" }],
+    ["text-textLight", { "color": "rgba(var(--c-textLight), var(--un-text-opacity, 1))" }],
+    ["text-accent", { "color": "rgba(var(--c-accent), var(--un-text-opacity, 1))" }],
+    ["text-primary", { "color": "rgba(var(--c-primary), var(--un-text-opacity, 1))" }],
+
+    // Theme-aware border colors
+    ["border-accent", { "border-color": "rgba(var(--c-accent), var(--un-border-opacity, 1))" }],
+    [/^border-accent\/(\d+)$/, ([, o]) => ({ "border-color": `rgba(var(--c-accent), ${parseInt(o!) / 100})` })],
+
+    // Theme-aware gradient stops
+    [/^from-accent\/(\d+)$/, ([, o]) => ({
+      "--un-gradient-from": `rgba(var(--c-accent), ${parseInt(o!) / 100})`,
+      "--un-gradient-to": `rgba(var(--c-accent), 0)`,
+    })],
+    [/^to-accent\/(\d+)$/, ([, o]) => ({
+      "--un-gradient-to": `rgba(var(--c-accent), ${parseInt(o!) / 100})`,
+    })],
+
+    // Theme-aware shadow color
+    [/^shadow-accent\/(\d+)$/, ([, o]) => ({
+      "--un-shadow-color": `rgba(var(--c-accent), ${parseInt(o!) / 100})`,
+    })],
+  ],
   theme: {
-    colors: {
-      primary: "#0a192f",
-      secondary: "#112240",
-      accent: "#64ffda",
-      text: "#8892b0",
-      textLight: "#ccd6f6",
-    },
     animation: {
       keyframes: {
         "fade-in":
@@ -42,5 +66,5 @@ export default defineConfig({
     "animate-fade-in": "animate-[fade-in_0.5s_ease-in-out]",
     "tech-tile": "relative overflow-visible",
   },
-  safelist: ["animate-fade-in"],
+  safelist: ["animate-fade-in", "i-mdi-weather-sunny", "i-mdi-weather-night"],
 });
