@@ -36,12 +36,12 @@ export default function ContactSection() {
     >
       <div class="text-left max-w-4xl w-full px-6">
         {/* Main Heading */}
-        <h2 class="text-textLight text-5xl md:text-6xl lg:text-7xl font-bold mb-8">
+        <h2 class="text-textLight text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8">
           Get in touch
         </h2>
 
         {/* Subtitle */}
-        <p class="text-text text-lg md:text-xl lg:text-2xl leading-relaxed mb-12 max-w-3xl">
+        <p class="text-text text-base md:text-lg lg:text-2xl leading-relaxed mb-12 max-w-3xl">
           Want to know more about me, work with me, or just want to have a
           casual chat? Feel free to reach out!
         </p>

@@ -66,10 +66,10 @@ export default function AboutSection() {
   return (
     <section id="about" class="min-h-screen py-24">
       <div class="mb-16">
-        <h2 class="text-textLight text-5xl md:text-6xl font-bold mb-6">
+        <h2 class="text-textLight text-3xl sm:text-5xl md:text-6xl font-bold mb-6">
           About
         </h2>
-        <p class="text-text text-lg md:text-xl max-w-2xl">
+        <p class="text-text text-base md:text-lg max-w-2xl">
           A quick intro, background, and what's happening now.
         </p>
       </div>

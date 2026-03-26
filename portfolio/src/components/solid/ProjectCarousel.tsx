@@ -232,7 +232,7 @@ export default function ProjectCarousel() {
                     <div class="relative z-10">
                       {/* Project Image Placeholder */}
                       <Show when={project.image}>
-                        <div class="w-full h-48 bg-primary rounded-lg mb-4 overflow-hidden">
+                        <div class="w-full h-36 md:h-48 bg-primary rounded-lg mb-4 overflow-hidden">
                           <img
                             src={project.image}
                             alt={project.title}
@@ -242,7 +242,7 @@ export default function ProjectCarousel() {
                       </Show>
                       <Show when={!project.image}>
                         {/* Gradient Placeholder */}
-                        <div class="w-full h-48 bg-gradient-to-br from-accent/20 to-accent/5 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="w-full h-36 md:h-48 bg-gradient-to-br from-accent/20 to-accent/5 rounded-lg mb-4 flex items-center justify-center">
                           <div class="i-mdi-code-braces text-accent text-6xl opacity-30"></div>
                         </div>
                       </Show>

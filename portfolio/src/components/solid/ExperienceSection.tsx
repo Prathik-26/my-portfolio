@@ -123,10 +123,10 @@ export default function ExperienceSection() {
   return (
     <section id="experience" class="min-h-screen py-24">
       <div class="mb-16">
-        <h2 class="text-textLight text-5xl md:text-6xl font-bold mb-6">
+        <h2 class="text-textLight text-3xl sm:text-5xl md:text-6xl font-bold mb-6">
           Experience
         </h2>
-        <p class="text-text text-lg md:text-xl max-w-2xl">
+        <p class="text-text text-base md:text-lg max-w-2xl">
           My professional journey in software development across different
           companies and roles.
         </p>
@@ -217,7 +217,7 @@ export default function ExperienceSection() {
                   </h4>
 
                   {/* Grid instead of flex */}
-                  <div class="grid gap-3 md:gap-4 grid-cols-[repeat(auto-fit,minmax(4.25rem,1fr))] overflow-visible">
+                  <div class="grid gap-3 md:gap-4 grid-cols-[repeat(auto-fit,minmax(3.5rem,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(4.25rem,1fr))] overflow-visible">
                     <For each={exp().technologies}>
                       {(tech) => (
                         <div
