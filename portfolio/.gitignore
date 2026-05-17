@@ -32,6 +32,9 @@ pnpm-debug.log*
 .env
 .env.*.local
 .env.local
+.env.development.local
+.env.production.local
+.env.test.local
 
 # OS files
 .DS_Store
@@ -43,12 +46,33 @@ desktop.ini
 .idea/
 *.sublime-workspace
 *.sublime-project
+.history/
+*.swp
+*.swo
+*~
+
+# Claude Code (per-machine settings only — shared settings.json stays tracked)
+.claude/settings.local.json
 
 # Misc caches and temp
 .cache-loader/
 .tmp/
 temp/
 bower_components/
+.parcel-cache/
+.turbo/
+.pnp.*
+pnpm-store/
+
+# Lint / formatter caches
+.eslintcache
+.stylelintcache
+.prettiercache
+
+# Runtime / process files
+*.pid
+*.seed
+*.pid.lock
 
 # TypeScript
 *.tsbuildinfo
