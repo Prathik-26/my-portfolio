@@ -24,12 +24,32 @@ export default function ProjectCarousel() {
       skipSnaps: false,
       containScroll: "trimSnaps",
     }),
-    () => [Autoplay({ delay: 4000, stopOnInteraction: true })]
+    () => [Autoplay({ delay: 4000, stopOnInteraction: true })],
   );
 
   const projects: Project[] = [
     {
       id: 1,
+      title: "Internal Operations Management System",
+      description:
+        "A role-based internal workflow platform designed for small-medium organizations. Built to demonstrate production-grade backend architecture, auditability, and operational discipline.",
+      tech: ["React", "NestJS"],
+      category: "fullstack",
+      github:
+        "https://github.com/Prathik-26/internal-operations-management-system",
+      live: "https://oms-two-sigma.vercel.app",
+    },
+    {
+      id: 2,
+      title: "Request Hub",
+      description: "A minimal API Client on the browser",
+      tech: ["React", "Zudstand"],
+      category: "web",
+      github: "https://github.com/Prathik-26/request-lab",
+      live: "https://request-lab.vercel.app/",
+    },
+    {
+      id: 3,
       title: "Portfolio Website",
       description:
         "Personal portfolio website showcasing projects, skills, and professional experience. Features modern design, smooth animations, responsive layout, and optimized performance across all devices.",
@@ -38,7 +58,7 @@ export default function ProjectCarousel() {
       github: "https://github.com/Prathik-26/my-portfolio",
     },
     {
-      id: 2,
+      id: 4,
       title: "Personal Expense Tracker",
       description:
         "A comprehensive expense tracking application built with modern TypeScript. Features include real-time expense monitoring, category-based organization, data visualization, and detailed financial analytics to help users manage their personal finances effectively.",
@@ -49,7 +69,7 @@ export default function ProjectCarousel() {
       live: "https://personal-expense-tracker-six-weld.vercel.app",
     },
     {
-      id: 3,
+      id: 5,
       title: "Reddit Client Web App",
       description:
         "A modern Reddit client built with React and the latest web technologies. Features include infinite scrolling, real-time updates, advanced search functionality, and responsive design optimized for all devices.",
@@ -60,7 +80,7 @@ export default function ProjectCarousel() {
       live: "https://reddit-client-blue.vercel.app/",
     },
     {
-      id: 4,
+      id: 6,
       title: "Weather App",
       description:
         "Real-time weather application with beautiful UI and detailed forecasts. Built to practice API integration and state management with modern React patterns.",
@@ -72,7 +92,7 @@ export default function ProjectCarousel() {
       live: "https://weather-app-bay-theta-59.vercel.app/",
     },
     {
-      id: 5,
+      id: 7,
       title: "Blog Website",
       description:
         "Full-stack blog platform built with the MERN stack. Features include user authentication, rich text editor for creating posts, responsive Material-UI design, comment system, and a powerful admin dashboard for content management.",
@@ -82,7 +102,7 @@ export default function ProjectCarousel() {
       github: "https://github.com/Prathik-26/Blog-Website",
     },
     {
-      id: 6,
+      id: 8,
       title: "E-commerce Platform",
       description:
         "Modern e-commerce website developed with React and styled-components. Features a clean product catalog, shopping cart functionality, responsive design, and an intuitive user interface optimized for seamless online shopping experiences.",
@@ -92,7 +112,7 @@ export default function ProjectCarousel() {
       github: "https://github.com/Prathik-26/Ecommerce-React",
     },
     {
-      id: 7,
+      id: 9,
       title: "Clinic Database Management",
       description:
         "Comprehensive clinic management system for healthcare facilities. Manages patient records, appointments, medical history, prescriptions, and staff coordination. Built with a focus on data security and efficient healthcare workflow management.",
@@ -101,7 +121,7 @@ export default function ProjectCarousel() {
       github: "https://github.com/Prathik-26/Clinic-Database-Management",
     },
     {
-      id: 8,
+      id: 10,
       title: "Phonebook Management System",
       description:
         "Contact management system built using C++ for VTU coursework. Features include adding, editing, deleting, and searching contacts with efficient data structures. Demonstrates strong fundamentals in C++ programming and file handling.",
